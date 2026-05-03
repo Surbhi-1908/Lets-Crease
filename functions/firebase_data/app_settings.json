@@ -1,0 +1,43 @@
+{
+  "app_settings": {
+    "version_info": {
+      "currentVersion": "1.0.0",
+      "minimumVersion": "1.0.0",
+      "updateRequired": false,
+      "updateMessage": "New features and improvements available!",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.example.apporigami"
+    },
+    "feature_flags": {
+      "enableQuizzes": true,
+      "enableBlogPosts": true,
+      "enablePDFViewer": true,
+      "enableSocialSharing": true,
+      "enableOfflineMode": false,
+      "enablePushNotifications": true,
+      "enableAnalytics": true,
+      "enableCrashReporting": true
+    },
+    "quiz_settings": {
+      "questionsPerQuiz": 10,
+      "timePerQuestion": 30,
+      "passingScore": 70,
+      "maxAttempts": 3,
+      "categories": ["Artists", "Papers", "Folding Techniques", "Traditional Origami"],
+      "skillLevels": ["Beginner", "Moderate", "Intermediate"]
+    },
+    "content_settings": {
+      "maxBlogPostsPerPage": 10,
+      "maxModelsPerCategory": 20,
+      "enableImageCaching": true,
+      "enablePDFCaching": true,
+      "cacheExpiryDays": 7
+    },
+    "notification_settings": {
+      "dailyTipEnabled": true,
+      "quizReminderEnabled": true,
+      "newContentEnabled": true,
+      "achievementEnabled": true,
+      "defaultNotificationTime": "09:00"
+    }
+  }
+}

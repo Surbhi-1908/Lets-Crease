@@ -1,0 +1,68 @@
+{
+  "akira_yoshizawa": {
+    "title": "The Master of Wet-Folding",
+    "content": "Akira Yoshizawa (1911-2005) revolutionized origami with his wet-folding technique, which allows for more organic, curved forms. He is credited with elevating origami from a craft to an art form. His innovative approach involved dampening the paper slightly during folding, enabling the creation of more lifelike and expressive models. Yoshizawa created over 50,000 models during his lifetime and is considered the father of modern origami. His philosophy emphasized the spiritual aspect of paper folding, viewing each fold as a meditation on form and beauty.",
+    "artistName": "Akira Yoshizawa",
+    "imageUrl": "https://example.com/yoshizawa.jpg",
+    "publishedAt": "2024-09-23T15:30:00Z",
+    "tags": ["Master", "Wet-folding", "Innovation", "Japanese", "Traditional"],
+    "category": "Artist Profile",
+    "readTime": 5,
+    "isActive": true
+  },
+  "robert_lang": {
+    "title": "Mathematics Meets Art",
+    "content": "Robert J. Lang is a physicist and mathematician who has applied scientific principles to origami design. His work combines complex mathematical algorithms with artistic vision, creating incredibly detailed and realistic models. Lang has developed computer programs that can design crease patterns for almost any shape, pushing the boundaries of what's possible in paper folding. His models often feature hundreds of steps and require precise execution. Lang's TreeMaker software has democratized complex origami design, allowing artists worldwide to create sophisticated models.",
+    "artistName": "Robert J. Lang",
+    "imageUrl": "https://example.com/lang.jpg",
+    "publishedAt": "2024-09-16T10:15:00Z",
+    "tags": ["Mathematics", "Computer Design", "Complex Models", "TreeMaker", "Physics"],
+    "category": "Artist Profile",
+    "readTime": 6,
+    "isActive": true
+  },
+  "tomoko_fuse": {
+    "title": "The Modular Origami Pioneer",
+    "content": "Tomoko Fuse is renowned for her work in modular origami, creating beautiful geometric forms by assembling multiple identical units. Her designs range from simple cubes to complex polyhedra, all created without cuts or glue. Fuse has authored numerous books on modular origami and has inspired countless folders to explore the mathematical beauty of geometric paper folding. Her work demonstrates how simple units can combine to create stunning complexity. She has published over 60 books and continues to innovate in the field of unit origami.",
+    "artistName": "Tomoko Fuse",
+    "imageUrl": "https://example.com/fuse.jpg",
+    "publishedAt": "2024-09-09T14:45:00Z",
+    "tags": ["Modular", "Geometric", "Unit Folding", "Polyhedra", "Books"],
+    "category": "Artist Profile",
+    "readTime": 4,
+    "isActive": true
+  },
+  "satoshi_kamiya": {
+    "title": "Super Complex Origami",
+    "content": "Satoshi Kamiya is famous for creating some of the most complex origami models ever designed. His works, such as the Ancient Dragon and Bahamut, can take days or even weeks to complete and require hundreds of precise folds. Kamiya's designs push the limits of what can be achieved with a single sheet of paper, creating incredibly detailed figures with intricate features like scales, claws, and facial expressions. His diagrams are works of art themselves, requiring advanced folding skills to interpret and execute.",
+    "artistName": "Satoshi Kamiya",
+    "imageUrl": "https://example.com/kamiya.jpg",
+    "publishedAt": "2024-09-02T09:20:00Z",
+    "tags": ["Complex", "Dragons", "Super Detail", "Advanced", "Diagrams"],
+    "category": "Artist Profile",
+    "readTime": 7,
+    "isActive": true
+  },
+  "origami_history": {
+    "title": "The Ancient Art of Paper Folding",
+    "content": "Origami, the Japanese art of paper folding, has a rich history spanning over a thousand years. While its exact origins are debated, it's believed to have developed from Chinese paper folding (zhezhi) and arrived in Japan by the 6th century. Initially used for ceremonial purposes, origami evolved into a popular art form during the Edo period (1603-1868). The word 'origami' comes from 'ori' (folding) and 'kami' (paper). Traditional origami follows strict rules: no cuts, no glue, and typically uses square paper. This ancient art form continues to evolve, inspiring artists, mathematicians, and engineers worldwide.",
+    "artistName": "Editorial Team",
+    "imageUrl": "https://example.com/history.jpg",
+    "publishedAt": "2024-08-26T11:30:00Z",
+    "tags": ["History", "Traditional", "Japanese", "Culture", "Ancient"],
+    "category": "Educational",
+    "readTime": 8,
+    "isActive": true
+  },
+  "paper_types": {
+    "title": "Choosing the Right Paper for Origami",
+    "content": "The choice of paper can make or break an origami project. Traditional kami paper is thin, square, and holds creases well, making it perfect for beginners. Washi, handmade Japanese paper, offers beautiful textures and patterns. For complex models, specialized papers like tissue foil (tissue paper backed with foil) provide both strength and the ability to hold fine details. Elephant hide paper is excellent for wet-folding techniques. Each paper type has unique properties: weight, texture, color retention, and folding memory. Understanding these characteristics helps folders choose the perfect paper for their projects.",
+    "artistName": "Materials Expert",
+    "imageUrl": "https://example.com/papers.jpg",
+    "publishedAt": "2024-08-19T16:00:00Z",
+    "tags": ["Paper", "Materials", "Kami", "Washi", "Tissue Foil"],
+    "category": "Tutorial",
+    "readTime": 6,
+    "isActive": true
+  }
+}

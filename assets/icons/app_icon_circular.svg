@@ -1,0 +1,39 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Circular background with gradient -->
+  <defs>
+    <radialGradient id="bgGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FF6EB4;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#FF6EB4;stop-opacity:0.05" />
+    </radialGradient>
+    <linearGradient id="craneGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6EB4" />
+      <stop offset="100%" style="stop-color:#F941A6" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Circular background -->
+  <circle cx="512" cy="512" r="512" fill="white"/>
+  <circle cx="512" cy="512" r="480" fill="url(#bgGradient)" stroke="#FF6EB4" stroke-width="4" opacity="0.3"/>
+  
+  <!-- Origami crane centered and scaled -->
+  <g transform="translate(512,512) scale(2.5) translate(-100,-80)">
+    <!-- Main crane body -->
+    <path d="M20 80 L80 20 L140 80 L120 100 L100 80 L80 100 L60 80 L40 100 Z" fill="url(#craneGradient)" stroke="white" stroke-width="1"/>
+    
+    <!-- Crane neck -->
+    <path d="M80 20 L60 0 L80 10 Z" fill="url(#craneGradient)" stroke="white" stroke-width="1"/>
+    
+    <!-- Crane tail -->
+    <path d="M140 80 L160 60 L150 90 Z" fill="url(#craneGradient)" stroke="white" stroke-width="1"/>
+    
+    <!-- Wing details -->
+    <path d="M60 80 L80 60 L100 80 L80 100 Z" fill="#F941A6" stroke="white" stroke-width="0.5" opacity="0.8"/>
+    
+    <!-- Fold lines for detail -->
+    <line x1="80" y1="20" x2="80" y2="100" stroke="white" stroke-width="1" opacity="0.6"/>
+    <line x1="40" y1="100" x2="120" y2="100" stroke="white" stroke-width="1" opacity="0.6"/>
+  </g>
+  
+  <!-- Subtle shadow effect -->
+  <circle cx="512" cy="520" r="460" fill="black" opacity="0.05"/>
+</svg>

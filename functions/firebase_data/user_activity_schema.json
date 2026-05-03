@@ -1,0 +1,67 @@
+{
+  "user_activities": {
+    "session_tracking": {
+      "sessionId": "string",
+      "userId": "string",
+      "startTime": "timestamp",
+      "endTime": "timestamp",
+      "duration": "number",
+      "screenViews": ["array_of_screens"],
+      "deviceInfo": {
+        "platform": "string",
+        "version": "string",
+        "model": "string"
+      }
+    },
+    "model_interactions": {
+      "userId": "string",
+      "modelId": "string",
+      "modelName": "string",
+      "category": "string",
+      "action": "string", 
+      "timestamp": "timestamp",
+      "duration": "number",
+      "completed": "boolean",
+      "progress": "number",
+      "difficulty": "string"
+    },
+    "quiz_activities": {
+      "userId": "string",
+      "quizId": "string",
+      "category": "string",
+      "skillLevel": "string",
+      "startTime": "timestamp",
+      "endTime": "timestamp",
+      "score": "number",
+      "totalQuestions": "number",
+      "correctAnswers": "number",
+      "timePerQuestion": ["array_of_times"],
+      "answeredQuestions": ["array_of_question_ids"]
+    },
+    "navigation_tracking": {
+      "userId": "string",
+      "fromScreen": "string",
+      "toScreen": "string",
+      "timestamp": "timestamp",
+      "method": "string",
+      "sessionId": "string"
+    },
+    "feature_usage": {
+      "userId": "string",
+      "feature": "string",
+      "action": "string",
+      "timestamp": "timestamp",
+      "metadata": "object",
+      "sessionId": "string"
+    },
+    "error_tracking": {
+      "userId": "string",
+      "errorType": "string",
+      "errorMessage": "string",
+      "stackTrace": "string",
+      "timestamp": "timestamp",
+      "screen": "string",
+      "deviceInfo": "object"
+    }
+  }
+}

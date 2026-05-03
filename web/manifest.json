@@ -1,0 +1,40 @@
+{
+    "name": "Let's Crease - Interactive Paper Folding Simulator",
+    "short_name": "Let's Crease",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#FF6EB4",
+    "description": "Learn origami with our interactive 3D simulator. Practice folding techniques, explore models, and master the ancient art of paper folding.",
+    "orientation": "any",
+    "prefer_related_applications": false,
+    "categories": [
+        "education",
+        "games",
+        "lifestyle"
+    ],
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/Icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}

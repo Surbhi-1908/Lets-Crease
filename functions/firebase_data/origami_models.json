@@ -1,0 +1,118 @@
+{
+  "animals": {
+    "spider": {
+      "name": "Spider",
+      "difficulty": "Intermediate",
+      "estimatedTime": 35,
+      "pdfPath": "assets/pdfs/Spider.pdf",
+      "description": "A detailed spider model with articulated legs and realistic proportions",
+      "category": "Animals",
+      "skillLevel": "Intermediate",
+      "steps": 45,
+      "paperSize": "20cm x 20cm",
+      "tags": ["spider", "insects", "intermediate", "realistic"],
+      "isActive": true,
+      "createdAt": "2024-09-30T15:00:00Z"
+    },
+    "brachiosaurus": {
+      "name": "Brachiosaurus",
+      "difficulty": "Advanced",
+      "estimatedTime": 50,
+      "pdfPath": "assets/pdfs/Brachiosaurus .pdf",
+      "description": "A majestic long-necked dinosaur with detailed features and proportions",
+      "category": "Animals",
+      "skillLevel": "Advanced",
+      "steps": 68,
+      "paperSize": "25cm x 25cm",
+      "tags": ["dinosaur", "brachiosaurus", "advanced", "prehistoric"],
+      "isActive": true,
+      "createdAt": "2024-09-30T15:00:00Z"
+    }
+  },
+  "fictional": {
+    "butterfly": {
+      "name": "Butterfly",
+      "difficulty": "Beginner",
+      "estimatedTime": 20,
+      "pdfPath": "assets/pdfs/Butterfly .pdf",
+      "description": "A beautiful butterfly with symmetrical wings and elegant form",
+      "category": "Fictional",
+      "skillLevel": "Beginner",
+      "steps": 25,
+      "paperSize": "15cm x 15cm",
+      "tags": ["butterfly", "wings", "beginner", "colorful"],
+      "isActive": true,
+      "createdAt": "2024-09-30T15:00:00Z"
+    },
+    "buddhist_monk": {
+      "name": "Buddhist Monk",
+      "difficulty": "Intermediate",
+      "estimatedTime": 40,
+      "pdfPath": "assets/pdfs/Buddhist Monk Diagrams PDF.pdf",
+      "description": "A serene monk figure in meditation pose with flowing robes",
+      "category": "Fictional",
+      "skillLevel": "Intermediate",
+      "steps": 52,
+      "paperSize": "20cm x 20cm",
+      "tags": ["monk", "meditation", "spiritual", "intermediate"],
+      "isActive": true,
+      "createdAt": "2024-09-30T15:00:00Z"
+    },
+    "ganesha": {
+      "name": "Ganesha",
+      "difficulty": "Advanced",
+      "estimatedTime": 60,
+      "pdfPath": "assets/pdfs/Ganesha $ - Diagrams.pdf",
+      "description": "The elephant-headed Hindu deity with intricate details and symbolic elements",
+      "category": "Fictional",
+      "skillLevel": "Advanced",
+      "steps": 75,
+      "paperSize": "25cm x 25cm",
+      "tags": ["ganesha", "hindu", "deity", "advanced", "spiritual"],
+      "isActive": true,
+      "createdAt": "2024-09-30T15:00:00Z"
+    },
+    "lao_tseu": {
+      "name": "Lao-Tseu",
+      "difficulty": "Advanced",
+      "estimatedTime": 55,
+      "pdfPath": "assets/pdfs/Lao-Tseu - Diagrammes PDF.pdf",
+      "description": "The ancient Chinese philosopher in contemplative pose",
+      "category": "Fictional",
+      "skillLevel": "Advanced",
+      "steps": 70,
+      "paperSize": "22cm x 22cm",
+      "tags": ["philosopher", "chinese", "wisdom", "advanced"],
+      "isActive": true,
+      "createdAt": "2024-09-30T15:00:00Z"
+    },
+    "lighthouse": {
+      "name": "Phare (Lighthouse)",
+      "difficulty": "Intermediate",
+      "estimatedTime": 35,
+      "pdfPath": "assets/pdfs/Phare - Diagrammes PDF.pdf",
+      "description": "A tall lighthouse with detailed architectural features",
+      "category": "Fictional",
+      "skillLevel": "Intermediate",
+      "steps": 48,
+      "paperSize": "20cm x 20cm",
+      "tags": ["lighthouse", "architecture", "beacon", "intermediate"],
+      "isActive": true,
+      "createdAt": "2024-09-30T15:00:00Z"
+    },
+    "magic_tower": {
+      "name": "Tour de Magie (Magic Tower)",
+      "difficulty": "Advanced",
+      "estimatedTime": 45,
+      "pdfPath": "assets/pdfs/Tour de Magie - Diagrammes PDF.pdf",
+      "description": "A mystical tower with magical elements and intricate design",
+      "category": "Fictional",
+      "skillLevel": "Advanced",
+      "steps": 62,
+      "paperSize": "23cm x 23cm",
+      "tags": ["magic", "tower", "fantasy", "advanced"],
+      "isActive": true,
+      "createdAt": "2024-09-30T15:00:00Z"
+    }
+  }
+}

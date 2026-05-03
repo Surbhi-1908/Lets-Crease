@@ -1,0 +1,108 @@
+{
+  "achievements": {
+    "first_fold": {
+      "id": "first_fold",
+      "title": "First Steps",
+      "description": "Complete your first origami model",
+      "icon": "🎯",
+      "points": 10,
+      "category": "Beginner",
+      "requirement": {
+        "type": "model_completion",
+        "count": 1
+      },
+      "isActive": true
+    },
+    "quiz_master": {
+      "id": "quiz_master",
+      "title": "Quiz Master",
+      "description": "Score 100% on any quiz",
+      "icon": "🧠",
+      "points": 50,
+      "category": "Quiz",
+      "requirement": {
+        "type": "quiz_perfect_score",
+        "count": 1
+      },
+      "isActive": true
+    },
+    "speed_folder": {
+      "id": "speed_folder",
+      "title": "Speed Folder",
+      "description": "Complete a model in under 10 minutes",
+      "icon": "⚡",
+      "points": 25,
+      "category": "Speed",
+      "requirement": {
+        "type": "model_time",
+        "maxTime": 600
+      },
+      "isActive": true
+    },
+    "knowledge_seeker": {
+      "id": "knowledge_seeker",
+      "title": "Knowledge Seeker",
+      "description": "Read 5 blog posts about origami artists",
+      "icon": "📚",
+      "points": 30,
+      "category": "Learning",
+      "requirement": {
+        "type": "blog_reads",
+        "count": 5
+      },
+      "isActive": true
+    },
+    "daily_folder": {
+      "id": "daily_folder",
+      "title": "Daily Folder",
+      "description": "Fold for 7 consecutive days",
+      "icon": "📅",
+      "points": 75,
+      "category": "Consistency",
+      "requirement": {
+        "type": "daily_streak",
+        "count": 7
+      },
+      "isActive": true
+    },
+    "advanced_artist": {
+      "id": "advanced_artist",
+      "title": "Advanced Artist",
+      "description": "Complete 5 advanced difficulty models",
+      "icon": "🎨",
+      "points": 100,
+      "category": "Skill",
+      "requirement": {
+        "type": "advanced_models",
+        "count": 5
+      },
+      "isActive": true
+    },
+    "social_sharer": {
+      "id": "social_sharer",
+      "title": "Social Sharer",
+      "description": "Share your first creation on social media",
+      "icon": "📱",
+      "points": 20,
+      "category": "Social",
+      "requirement": {
+        "type": "social_share",
+        "count": 1
+      },
+      "isActive": true
+    },
+    "perfectionist": {
+      "id": "perfectionist",
+      "title": "Perfectionist",
+      "description": "Complete 10 models without any mistakes",
+      "icon": "✨",
+      "points": 150,
+      "category": "Precision",
+      "requirement": {
+        "type": "perfect_models",
+        "count": 10
+      },
+      "isActive": true
+    }
+  }
+}

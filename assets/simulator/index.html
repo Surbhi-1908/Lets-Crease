@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Origami Simulator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            overflow: hidden;
+            height: 100vh;
+        }
+        
+        #container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        /* Top Controls Bar */
+        #topControls {
+            background: #333;
+            color: white;
+            padding: 8px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 44px;
+            z-index: 1000;
+        }
+        
+        .control-group {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        
+        .btn {
+            background: #555;
+            border: none;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .btn:hover, .btn.active {
+            background: #007AFF;
+        }
+        
+        .btn:active {
+            transform: scale(0.95);
+        }
+        
+        /* Main Canvas Area */
+        #canvasContainer {
+            flex: 1;
+            position: relative;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+        }
+        
+        #canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+            touch-action: none;
+        }
+        
+        /* Bottom Controls Panel */
+        #bottomControls {
+            background: white;
+            border-top: 1px solid #ddd;
+            padding: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 70px;
+        }
+        
+        /* View Mode Controls */
+        .view-controls {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        
+        .view-btn {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 10px;
+            text-align: center;
+            line-height: 1;
+        }
+        
+        .view-btn.active {
+            border-color: #007AFF;
+            background: #007AFF;
+            color: white;
+        }
+        
+        .view-btn:hover {
+            border-color: #007AFF;
+        }
+        
+        /* Fold Control */
+        .fold-control {
+            flex: 1;
+            max-width: 200px;
+            margin: 0 12px;
+        }
+        
+        .fold-label {
+            font-size: 11px;
+            color: #666;
+            margin-bottom: 4px;
+            text-align: center;
+        }
+        
+        .slider-container {
+            position: relative;
+            height: 30px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .fold-slider {
+            width: 100%;
+            height: 4px;
+            border-radius: 2px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        
+        .fold-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #007AFF;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .fold-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #007AFF;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .fold-value {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 10px;
+            color: #666;
+            background: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            border: 1px solid #ddd;
+        }
+        
+        /* Control Mode */
+        .control-mode {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        
+        .mode-btn {
+            width: 36px;
+            height: 36px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: all 0.2s;
+        }
+        
+        .mode-btn.active {
+            background: #007AFF;
+            color: white;
+            border-color: #007AFF;
+        }
+        
+        /* Advanced Options Panel */
+        #advancedPanel {
+            position: absolute;
+            top: 44px;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #ddd;
+            padding: 16px;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+            z-index: 999;
+            max-height: 50vh;
+            overflow-y: auto;
+        }
+        
+        #advancedPanel.show {
+            transform: translateY(0);
+        }
+        
+        .panel-section {
+            margin-bottom: 16px;
+        }
+        
+        .panel-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .panel-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+        }
+        
+        .setting-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+        }
+        
+        .setting-checkbox {
+            width: 16px;
+            height: 16px;
+        }
+        
+        .setting-input {
+            width: 60px;
+            padding: 4px 8px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        
+        /* Loading State */
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            z-index: 100;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 12px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            #topControls {
+                padding: 6px 8px;
+                min-height: 40px;
+            }
+            
+            .btn {
+                padding: 4px 8px;
+                font-size: 11px;
+            }
+            
+            #bottomControls {
+                padding: 8px;
+                min-height: 60px;
+            }
+            
+            .view-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 9px;
+            }
+            
+            .mode-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <!-- Top Controls -->
+        <div id="topControls">
+            <div class="control-group">
+                <button class="btn" onclick="showExamples()">📁 Examples</button>
+                <button class="btn" onclick="toggleAdvanced()">⚙️ Advanced</button>
+            </div>
+            <div class="control-group">
+                <button class="btn" onclick="pauseSimulation()" id="pauseBtn">⏸️ Pause</button>
+                <button class="btn" onclick="resetSimulation()">🔄 Reset</button>
+            </div>
+        </div>
+        
+        <!-- Advanced Options Panel -->
+        <div id="advancedPanel">
+            <div class="panel-section">
+                <div class="panel-title">🎯 Simulation Settings</div>
+                <div class="panel-content">
+                    <div class="setting-item">
+                        <input type="checkbox" id="faceNormals" class="setting-checkbox" checked>
+                        <label for="faceNormals">Face Normals Material</label>
+                    </div>
+                    <div class="setting-item">
+                        <label>Max Strain:</label>
+                        <input type="number" class="setting-input" value="5" min="1" max="10" id="maxStrain">
+                        <span>%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="panel-section">
+                <div class="panel-title">🎬 Animation Settings</div>
+                <div class="panel-content">
+                    <div class="setting-item">
+                        <input type="checkbox" id="autoRotate" class="setting-checkbox">
+                        <label for="autoRotate">Auto Rotate</label>
+                    </div>
+                    <div class="setting-item">
+                        <label>Speed:</label>
+                        <input type="range" min="0.1" max="2" step="0.1" value="1" id="animSpeed">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="panel-section">
+                <div class="panel-title">👁️ Edge Visibility</div>
+                <div class="panel-content">
+                    <div class="setting-item">
+                        <input type="checkbox" id="showEdges" class="setting-checkbox" checked>
+                        <label for="showEdges">Show Crease Lines</label>
+                    </div>
+                    <div class="setting-item">
+                        <input type="checkbox" id="showOutline" class="setting-checkbox">
+                        <label for="showOutline">Show Outline</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Canvas -->
+        <div id="canvasContainer">
+            <canvas id="canvas"></canvas>
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <div>Loading Origami Model...</div>
+            </div>
+        </div>
+        
+        <!-- Bottom Controls -->
+        <div id="bottomControls">
+            <!-- View Mode -->
+            <div class="view-controls">
+                <div class="view-btn active" onclick="setViewMode('material')" id="materialBtn">
+                    <div>📄<br><span style="font-size:8px;">Material</span></div>
+                </div>
+                <div class="view-btn" onclick="setViewMode('strain')" id="strainBtn">
+                    <div>🌈<br><span style="font-size:8px;">Strain</span></div>
+                </div>
+            </div>
+            
+            <!-- Fold Control -->
+            <div class="fold-control">
+                <div class="fold-label">Fold Percent</div>
+                <div class="slider-container">
+                    <input type="range" class="fold-slider" min="0" max="100" value="60" id="foldSlider">
+                    <div class="fold-value" id="foldValue">60%</div>
+                </div>
+            </div>
+            
+            <!-- Control Mode -->
+            <div class="control-mode">
+                <div class="mode-btn active" onclick="setControlMode('rotate')" id="rotateBtn" title="Rotate">🔄</div>
+                <div class="mode-btn" onclick="setControlMode('grab')" id="grabBtn" title="Grab">✋</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="three.min.js"></script>
+    <script src="simulator.js"></script>
+</body>
+</html>

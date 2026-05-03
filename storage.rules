@@ -1,0 +1,50 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+
+    // User profile images - users can upload/manage their own
+    match /user_profiles/{userId}/{allPaths=**} {
+      allow read: if true; // Public read access for profile images
+      allow write: if isAuthenticated() && isOwner(userId);
+    }
+
+    // Blog post images - authenticated users can upload
+    match /blog_images/{userId}/{allPaths=**} {
+      allow read: if true; // Public read access for blog images
+      allow write: if isAuthenticated() && isOwner(userId);
+    }
+
+    // Origami model images - authenticated users can upload
+    match /origami_models/{userId}/{allPaths=**} {
+      allow read: if true; // Public read access for model images
+      allow write: if isAuthenticated() && isOwner(userId);
+    }
+
+    // Tutorial images and videos - authenticated users can upload
+    match /tutorials/{userId}/{allPaths=**} {
+      allow read: if true; // Public read access for tutorials
+      allow write: if isAuthenticated() && isOwner(userId);
+    }
+
+    // App assets - read-only for all users
+    match /app_assets/{allPaths=**} {
+      allow read: if true;
+      allow write: if false; // Only admins should upload app assets
+    }
+
+
+    // Default deny rule
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

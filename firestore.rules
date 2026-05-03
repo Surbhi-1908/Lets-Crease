@@ -1,0 +1,120 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+    
+    function isValidUser() {
+      return isAuthenticated() && request.auth.uid != null;
+    }
+
+    // Users collection - users can read/write their own data
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+      allow create: if isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // Quiz results - users can read/write their own quiz results
+    match /quiz_results/{resultId} {
+      allow read, write: if isAuthenticated() && 
+        (resource == null || resource.data.userId == request.auth.uid);
+      allow create: if isAuthenticated() && 
+        request.resource.data.userId == request.auth.uid;
+    }
+
+    // Quizzes collection - read-only for authenticated users
+    match /quizzes/{quizId} {
+      allow read: if isAuthenticated();
+      allow write: if false; // Only admins should write quiz data
+    }
+
+    // Blog posts - read for all, write for authenticated users
+    match /blog_posts/{postId} {
+      allow read: if true; // Public read access for blog posts
+      allow create: if isAuthenticated();
+      allow update, delete: if isAuthenticated() && 
+        (resource.data.authorId == request.auth.uid);
+    }
+
+    // Blog comments - authenticated users can CRUD their own comments
+    match /blog_comments/{commentId} {
+      allow read: if true; // Public read access for comments
+      allow create: if isAuthenticated() && 
+        request.resource.data.userId == request.auth.uid;
+      allow update, delete: if isAuthenticated() && 
+        resource.data.userId == request.auth.uid;
+    }
+
+    // User profiles - read for all, write for owner only
+    match /user_profiles/{userId} {
+      allow read: if true; // Public profiles
+      allow write: if isOwner(userId);
+      allow create: if isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // Origami models/tutorials - read for all, write for authenticated
+    match /origami_models/{modelId} {
+      allow read: if true; // Public access to origami models
+      allow create: if isAuthenticated();
+      allow update, delete: if isAuthenticated() && 
+        resource.data.createdBy == request.auth.uid;
+    }
+
+    // User favorites - users can manage their own favorites
+    match /user_favorites/{userId} {
+      allow read, write: if isOwner(userId);
+      allow create: if isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // App settings/configuration - read-only for authenticated users
+    match /app_settings/{configId} {
+      allow read: if isAuthenticated();
+      allow write: if false; // Only admins should modify app config
+    }
+
+    // User activities - users can read/write their own activity data
+    match /user_activities/{activityId} {
+      allow read, write: if isAuthenticated() && 
+        (resource == null || resource.data.userId == request.auth.uid);
+      allow create: if isAuthenticated() && 
+        request.resource.data.userId == request.auth.uid;
+    }
+
+    // Achievements - read for all authenticated users
+    match /achievements/{achievementId} {
+      allow read: if isAuthenticated();
+      allow write: if false; // Only admins should modify achievements
+    }
+
+    // Categories - read for all users
+    match /categories/{categoryId} {
+      allow read: if true; // Public access to categories
+      allow write: if false; // Only admins should modify categories
+    }
+
+    // User progress tracking - users can manage their own progress
+    match /user_progress/{userId} {
+      allow read, write: if isOwner(userId);
+      allow create: if isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // Notifications - users can read their own notifications
+    match /notifications/{notificationId} {
+      allow read: if isAuthenticated() && 
+        resource.data.userId == request.auth.uid;
+      allow write: if false; // Notifications are system-generated
+    }
+
+    // Default deny rule for any other collections
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

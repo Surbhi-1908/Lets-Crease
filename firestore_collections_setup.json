@@ -1,0 +1,206 @@
+{
+  "collections": [
+    {
+      "name": "users",
+      "description": "User profile and account information",
+      "sampleDocument": {
+        "uid": "user123",
+        "email": "user@example.com",
+        "displayName": "John Doe",
+        "photoURL": "https://example.com/photo.jpg",
+        "createdAt": "2024-01-01T00:00:00Z",
+        "lastLoginAt": "2024-01-01T00:00:00Z",
+        "preferences": {
+          "theme": "light",
+          "notifications": true,
+          "musicEnabled": true
+        }
+      }
+    },
+    {
+      "name": "quiz_results",
+      "description": "User quiz completion results and scores",
+      "sampleDocument": {
+        "userId": "user123",
+        "category": "Artists",
+        "skillLevel": "Beginner",
+        "score": 8,
+        "totalQuestions": 10,
+        "completedAt": "2024-01-01T00:00:00Z",
+        "answeredQuestions": ["q1", "q2", "q3"],
+        "timeSpent": 300,
+        "correctAnswers": ["q1", "q3", "q5"]
+      }
+    },
+    {
+      "name": "quizzes",
+      "description": "Quiz questions organized by category and skill level",
+      "sampleDocument": {
+        "id": "quiz_001",
+        "question": "Who is considered the father of modern origami?",
+        "options": ["Akira Yoshizawa", "Robert Lang", "John Montroll", "Lang Mu"],
+        "correctAnswerIndex": 0,
+        "category": "Artists",
+        "skillLevel": "Beginner",
+        "explanation": "Akira Yoshizawa revolutionized origami with wet-folding techniques.",
+        "createdAt": "2024-01-01T00:00:00Z"
+      }
+    },
+    {
+      "name": "blog_posts",
+      "description": "Blog articles and tutorials",
+      "sampleDocument": {
+        "title": "Getting Started with Origami",
+        "content": "Learn the basics of paper folding...",
+        "authorId": "user123",
+        "authorName": "John Doe",
+        "category": "Tutorial",
+        "tags": ["beginner", "basics", "tutorial"],
+        "published": true,
+        "createdAt": "2024-01-01T00:00:00Z",
+        "updatedAt": "2024-01-01T00:00:00Z",
+        "likes": 15,
+        "views": 250,
+        "featuredImage": "https://example.com/image.jpg"
+      }
+    },
+    {
+      "name": "blog_comments",
+      "description": "Comments on blog posts",
+      "sampleDocument": {
+        "postId": "post123",
+        "userId": "user123",
+        "userName": "John Doe",
+        "content": "Great tutorial! Very helpful.",
+        "createdAt": "2024-01-01T00:00:00Z",
+        "likes": 3,
+        "replies": []
+      }
+    },
+    {
+      "name": "user_profiles",
+      "description": "Public user profile information",
+      "sampleDocument": {
+        "userId": "user123",
+        "displayName": "John Doe",
+        "bio": "Origami enthusiast and teacher",
+        "profileImage": "https://example.com/profile.jpg",
+        "location": "New York, USA",
+        "joinedAt": "2024-01-01T00:00:00Z",
+        "stats": {
+          "modelsCreated": 25,
+          "quizzesCompleted": 50,
+          "blogPostsWritten": 5
+        },
+        "socialLinks": {
+          "website": "https://johndoe.com",
+          "instagram": "@johndoe_origami"
+        }
+      }
+    },
+    {
+      "name": "origami_models",
+      "description": "Origami model tutorials and instructions",
+      "sampleDocument": {
+        "title": "Paper Crane Tutorial",
+        "description": "Step-by-step guide to folding a paper crane",
+        "category": "Traditional Origami",
+        "difficulty": "Beginner",
+        "createdBy": "user123",
+        "createdAt": "2024-01-01T00:00:00Z",
+        "instructions": [
+          "Start with a square piece of paper",
+          "Fold diagonally both ways",
+          "Create preliminary base"
+        ],
+        "images": [
+          "https://example.com/step1.jpg",
+          "https://example.com/step2.jpg"
+        ],
+        "tags": ["crane", "bird", "traditional"],
+        "likes": 45,
+        "saves": 20,
+        "estimatedTime": "15 minutes"
+      }
+    },
+    {
+      "name": "user_favorites",
+      "description": "User's favorite models and tutorials",
+      "sampleDocument": {
+        "userId": "user123",
+        "favorites": {
+          "models": ["model1", "model2", "model3"],
+          "blogPosts": ["post1", "post2"],
+          "categories": ["Artists", "Traditional Origami"]
+        },
+        "updatedAt": "2024-01-01T00:00:00Z"
+      }
+    },
+    {
+      "name": "user_progress",
+      "description": "User learning progress and achievements",
+      "sampleDocument": {
+        "userId": "user123",
+        "skillLevels": {
+          "Artists": "Intermediate",
+          "Papers": "Beginner",
+          "Folding Techniques": "Moderate",
+          "Traditional Origami": "Advanced"
+        },
+        "achievements": [
+          {
+            "id": "first_quiz",
+            "name": "First Quiz Completed",
+            "unlockedAt": "2024-01-01T00:00:00Z"
+          }
+        ],
+        "streaks": {
+          "dailyQuiz": 5,
+          "weeklyPractice": 3
+        },
+        "totalPoints": 1250,
+        "updatedAt": "2024-01-01T00:00:00Z"
+      }
+    },
+    {
+      "name": "notifications",
+      "description": "User notifications and alerts",
+      "sampleDocument": {
+        "userId": "user123",
+        "type": "quiz_completed",
+        "title": "Quiz Completed!",
+        "message": "You scored 8/10 on the Artists quiz",
+        "read": false,
+        "createdAt": "2024-01-01T00:00:00Z",
+        "data": {
+          "quizId": "quiz123",
+          "score": 8
+        }
+      }
+    },
+    {
+      "name": "app_config",
+      "description": "Application configuration and settings",
+      "sampleDocument": {
+        "version": "1.0.0",
+        "maintenanceMode": false,
+        "featuredContent": {
+          "blogPost": "post123",
+          "model": "model456"
+        },
+        "categories": [
+          "Artists",
+          "Papers", 
+          "Folding Techniques",
+          "Traditional Origami"
+        ],
+        "skillLevels": [
+          "Beginner",
+          "Moderate", 
+          "Intermediate"
+        ],
+        "updatedAt": "2024-01-01T00:00:00Z"
+      }
+    }
+  ]
+}

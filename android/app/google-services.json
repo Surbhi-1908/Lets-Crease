@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "793663463862",
+    "project_id": "lets-crease",
+    "storage_bucket": "lets-crease.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:793663463862:android:954a51d5b8152025906117",
+        "android_client_info": {
+          "package_name": "com.example.apporigami"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "793663463862-fihdvme1s96lrkonbpffo5bainnmaqfc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.apporigami",
+            "certificate_hash": "8794085eca9602fbd4542f44a036aef6b7db2fb3"
+          }
+        },
+        {
+          "client_id": "793663463862-gv0530ttmvck9mo6nj0glv4e8mo0j04g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZSO1puYMi9yNtLHOiCGmoEKKXvdNEw9E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "793663463862-gv0530ttmvck9mo6nj0glv4e8mo0j04g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

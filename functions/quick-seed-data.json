@@ -1,0 +1,226 @@
+{
+  "categories": {
+    "animals": {
+      "name": "Animals",
+      "description": "Fold amazing animal models from simple to complex",
+      "icon": "🐾",
+      "color": "#4CAF50",
+      "order": 1,
+      "enabled": true,
+      "modelCount": 15,
+      "difficulty": "Beginner to Advanced",
+      "estimatedTime": "15-60 minutes",
+      "popularModels": [
+        "Spider",
+        "Brachiosaurus",
+        "Elephant",
+        "Tiger"
+      ],
+      "tags": [
+        "nature",
+        "wildlife",
+        "pets",
+        "safari"
+      ],
+      "createdAt": "2025-09-30T14:12:15.128Z",
+      "updatedAt": "2025-09-30T14:12:15.129Z"
+    },
+    "birds": {
+      "name": "Birds",
+      "description": "Create beautiful flying creatures with elegant wings",
+      "icon": "🦅",
+      "color": "#2196F3",
+      "order": 2,
+      "enabled": true,
+      "modelCount": 12,
+      "difficulty": "Beginner to Expert",
+      "estimatedTime": "10-45 minutes",
+      "popularModels": [
+        "Crane",
+        "Swan",
+        "Eagle",
+        "Peacock"
+      ],
+      "tags": [
+        "flying",
+        "wings",
+        "traditional",
+        "peace"
+      ],
+      "createdAt": "2025-09-30T14:12:15.129Z",
+      "updatedAt": "2025-09-30T14:12:15.129Z"
+    },
+    "traditional": {
+      "name": "Traditional",
+      "description": "Master the classic origami models passed down through generations",
+      "icon": "🏮",
+      "color": "#F44336",
+      "order": 6,
+      "enabled": true,
+      "modelCount": 20,
+      "difficulty": "Beginner to Intermediate",
+      "estimatedTime": "5-25 minutes",
+      "popularModels": [
+        "Crane",
+        "Boat",
+        "Hat",
+        "Fortune Teller"
+      ],
+      "tags": [
+        "classic",
+        "heritage",
+        "cultural",
+        "fundamental"
+      ],
+      "createdAt": "2025-09-30T14:12:15.129Z",
+      "updatedAt": "2025-09-30T14:12:15.129Z"
+    }
+  },
+  "users": {
+    "demo_user_1": {
+      "uid": "demo_user_1",
+      "email": "origami.master@example.com",
+      "displayName": "Origami Master",
+      "firstName": "Akira",
+      "lastName": "Tanaka",
+      "username": "origami_master_2024",
+      "photoURL": "https://example.com/avatars/master.jpg",
+      "createdAt": "2025-09-30T14:12:15.129Z",
+      "lastLoginAt": "2025-09-30T14:12:15.129Z",
+      "accountStatus": "active",
+      "emailVerified": true,
+      "preferences": {
+        "theme": "light",
+        "language": "en",
+        "notifications": {
+          "push": true,
+          "email": true,
+          "newModels": true,
+          "quizReminders": true,
+          "achievements": true
+        },
+        "privacy": {
+          "profileVisibility": "public",
+          "showEmail": false,
+          "allowMessages": true
+        }
+      },
+      "stats": {
+        "totalFolds": 156,
+        "completedQuizzes": 28,
+        "favoriteModels": 23,
+        "streakDays": 15,
+        "totalPoints": 4580,
+        "level": 8,
+        "experiencePoints": 7890
+      },
+      "skillLevels": {
+        "Animals": "Advanced",
+        "Birds": "Expert",
+        "Traditional": "Master"
+      },
+      "interests": [
+        "traditional_origami",
+        "complex_models",
+        "teaching"
+      ],
+      "bio": "Passionate origami artist and teacher with 15+ years of experience."
+    }
+  },
+  "origami_models": {
+    "butterfly_model": {
+      "title": "Butterfly",
+      "description": "A beautiful origami butterfly with elegant wings",
+      "category": "Traditional",
+      "difficulty": "Beginner",
+      "estimatedTime": 15,
+      "steps": 12,
+      "createdBy": "demo_user_1",
+      "createdAt": "2025-09-30T14:12:15.129Z",
+      "pdfPath": "assets/pdfs/Butterfly .pdf",
+      "tags": [
+        "butterfly",
+        "wings",
+        "traditional",
+        "beginner"
+      ],
+      "likes": 156,
+      "saves": 89,
+      "views": 1247,
+      "instructions": [
+        "Start with a square piece of paper, colored side down",
+        "Fold diagonally both ways and unfold",
+        "Fold horizontally and vertically, unfold",
+        "Push sides to center to form preliminary base",
+        "Fold top flaps down to create wings",
+        "Fold bottom point up for body",
+        "Shape wings and adjust"
+      ]
+    },
+    "crane_model": {
+      "title": "Traditional Crane",
+      "description": "The classic origami crane, symbol of peace and longevity",
+      "category": "Traditional",
+      "difficulty": "Intermediate",
+      "estimatedTime": 20,
+      "steps": 16,
+      "createdBy": "demo_user_1",
+      "createdAt": "2025-09-30T14:12:15.129Z",
+      "pdfPath": "assets/pdfs/crane.pdf",
+      "tags": [
+        "crane",
+        "bird",
+        "traditional",
+        "peace",
+        "intermediate"
+      ],
+      "likes": 234,
+      "saves": 167,
+      "views": 2156,
+      "instructions": [
+        "Start with preliminary base",
+        "Fold top flaps to center line",
+        "Fold top triangle down",
+        "Perform petal fold",
+        "Repeat on back",
+        "Fold sides to center",
+        "Pull wings apart gently",
+        "Shape head and tail"
+      ]
+    }
+  },
+  "shared_folds": {
+    "fold_share_1": {
+      "userId": "demo_user_1",
+      "userName": "Origami Master",
+      "title": "My Beautiful Butterfly Creation",
+      "description": "Finally mastered the butterfly fold! The wings came out perfectly symmetrical.",
+      "modelName": "Butterfly",
+      "category": "Traditional",
+      "difficulty": "Beginner",
+      "imageUrls": [
+        "https://example.com/shared/butterfly-1.jpg"
+      ],
+      "paperType": "Washi Paper",
+      "paperSize": "15cm x 15cm",
+      "timeSpent": 25,
+      "tags": [
+        "butterfly",
+        "traditional",
+        "washi",
+        "beginner"
+      ],
+      "createdAt": "2025-09-30T14:12:15.129Z",
+      "likes": 45,
+      "comments": 12,
+      "views": 156,
+      "featured": true,
+      "status": "published",
+      "tips": [
+        "Use thin paper for better wing definition",
+        "Crease sharply for clean lines",
+        "Take your time with the final shaping"
+      ]
+    }
+  }
+}

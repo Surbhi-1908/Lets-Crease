@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Let's Crease - Learn, Create, and Master the Art of Paper Folding with Interactive 3D Simulator">
+  <meta name="keywords" content="origami, paper folding, 3D simulator, learn origami, paper crafts">
+  <meta name="author" content="Let's Crease App">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://origami-app.web.app/">
+  <meta property="og:title" content="Let's Crease - Interactive Paper Folding Simulator">
+  <meta property="og:description" content="Learn origami with our interactive 3D simulator. Practice folding techniques, explore models, and master the ancient art of paper folding.">
+  <meta property="og:image" content="icons/Icon-512.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://origami-app.web.app/">
+  <meta property="twitter:title" content="Let's Crease - Interactive Paper Folding Simulator">
+  <meta property="twitter:description" content="Learn origami with our interactive 3D simulator. Practice folding techniques, explore models, and master the ancient art of paper folding.">
+  <meta property="twitter:image" content="icons/Icon-512.png">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Let's Crease">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="icons/Icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.png"/>
+
+  <!-- Theme colors -->
+  <meta name="theme-color" content="#FF6EB4">
+  <meta name="msapplication-TileColor" content="#FF6EB4">
+  <meta name="msapplication-navbutton-color" content="#FF6EB4">
+  
+  <!-- WebGL and Canvas optimization -->
+  <meta name="webgl" content="enabled">
+  <meta name="canvas" content="enabled">
+  
+  <title>Let's Crease - Interactive Paper Folding Simulator</title>
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="assets/fonts/MaterialIcons-Regular.otf" as="font" type="font/otf" crossorigin>
+  
+  <style>
+    /* Loading screen styles */
+    .loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #FF6EB4 0%, #3B82F6 100%);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: white;
+    }
+    .loading-logo {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
+    }
+    .loading-text {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .loading-subtext {
+      font-size: 16px;
+      opacity: 0.8;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .loading-text { font-size: 20px; }
+      .loading-subtext { font-size: 14px; }
+      .loading-logo { width: 60px; height: 60px; }
+    }
+    
+    /* Hide loading screen when Flutter loads */
+    .flutter-loaded .loading {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading screen -->
+  <div class="loading" id="loading">
+    <div class="loading-logo">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2L2 7V10C2 16 6 20.5 12 22C18 20.5 22 16 22 10V7L12 2Z"/>
+      </svg>
+    </div>
+    <div class="loading-text">Let's Crease</div>
+    <div class="loading-subtext">Loading your paper folding experience...</div>
+  </div>
+  
+  <!-- Flutter app container -->
+  <div id="flutter-app"></div>
+  
+  <script>
+    // Performance monitoring
+    window.addEventListener('load', function() {
+      console.log('Web app loaded in:', performance.now(), 'ms');
+    });
+    
+    // WebGL detection and optimization
+    function checkWebGLSupport() {
+      try {
+        const canvas = document.createElement('canvas');
+        const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+        return !!gl;
+      } catch (e) {
+        return false;
+      }
+    }
+    
+    if (!checkWebGLSupport()) {
+      console.warn('WebGL not supported - 3D features may be limited');
+    }
+    
+    // Hide loading screen when Flutter is ready
+    window.addEventListener('flutter-first-frame', function() {
+      document.body.classList.add('flutter-loaded');
+      document.getElementById('loading').style.display = 'none';
+    });
+  </script>
+  
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-storage-compat.js"></script>
+  
+  <script>
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBvOiKlePBHXfIuBziYuHCOubxbNQNewQI",
+      authDomain: "apporigami-f8b2c.firebaseapp.com",
+      projectId: "apporigami-f8b2c",
+      storageBucket: "apporigami-f8b2c.appspot.com",
+      messagingSenderId: "448618578101",
+      appId: "1:448618578101:web:0b650370bb29e29caa7edc"
+    };
+    
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

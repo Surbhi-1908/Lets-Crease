@@ -16,8 +16,8 @@ A comprehensive origami learning app built with Flutter and Firebase, featuring 
   <img src="simulator.jpg" width="200"/>
   <img src="paper.jpg" width="200"/>
 </p>
-## Features
 
+# Features
 ### 🎨 **Core Features**
 - **Splash Screen**: Beautiful origami-themed intro animation
 - **Firebase Authentication**: Secure email/password login and registration

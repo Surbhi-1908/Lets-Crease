@@ -1,4 +1,11 @@
-# Origami Master - Flutter Firebase App
+# Let's Crease! 🦢
+> The Art of Folding Paper
+
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=flat&logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-0175C2?style=flat&logo=dart&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat&logo=firebase&logoColor=black)
+![Android](https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white)
+![iOS](https://img.shields.io/badge/iOS-000000?style=flat&logo=apple&logoColor=white)
 
 A comprehensive origami learning app built with Flutter and Firebase, featuring authentication, skill-based learning, quizzes, and community features.
 

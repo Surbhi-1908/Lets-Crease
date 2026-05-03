@@ -8,7 +8,14 @@
 ![iOS](https://img.shields.io/badge/iOS-000000?style=flat&logo=apple&logoColor=white)
 
 A comprehensive origami learning app built with Flutter and Firebase, featuring authentication, skill-based learning, quizzes, and community features.
+## 📱 Screenshots
 
+<p float="left">
+  <img src="assets/screenshots/home.png" width="200"/>
+  <img src="assets/screenshots/categories.png" width="200"/>
+  <img src="assets/screenshots/simulator.png" width="200"/>
+  <img src="assets/screenshots/paper.png" width="200"/>
+</p>
 ## Features
 
 ### 🎨 **Core Features**

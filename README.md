@@ -11,10 +11,10 @@ A comprehensive origami learning app built with Flutter and Firebase, featuring 
 ## 📱 Screenshots
 
 <p float="left">
-  <img src="assets/screenshots/home.png" width="200"/>
-  <img src="assets/screenshots/categories.png" width="200"/>
-  <img src="assets/screenshots/simulator.png" width="200"/>
-  <img src="assets/screenshots/paper.png" width="200"/>
+  <img src="assets/screenshots/home.jpeg" width="200"/>
+  <img src="assets/screenshots/categories.jpeg" width="200"/>
+  <img src="assets/screenshots/simulator.jpeg" width="200"/>
+  <img src="assets/screenshots/paper.jpeg" width="200"/>
 </p>
 ## Features
 
